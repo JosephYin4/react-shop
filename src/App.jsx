@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import ProductCard from './ProductCard';
 
 function App() {
 
@@ -34,6 +35,36 @@ function App() {
           </div>
         </div>
       </nav>
+      <header className="bg-dark py-5">
+        <div className="container px-4 px-lg-5 my-5">
+          <div className="text-center text-white">
+            <h1 className="display-4 fw-bolder">Shop in style</h1>
+            <p className="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="py-5">
+          <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+              <div class="col mb-5">
+                <div class="card h-100">
+                  {/* Product Cards Here */}
+
+                  <ProductCard
+                    imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                    productName="Fancy Product"
+                    price="$40.00 - $80.00"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="py-5 bg-dark">
+        <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+      </footer>
     </>
   )
 }
