@@ -44,11 +44,11 @@ function App() {
         </div>
       </header>
       <main>
-        <section class="py-5">
-          <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-              <div class="col mb-5">
-                <div class="card h-100">
+        <section className="py-5">
+          <div className="container px-4 px-lg-5 mt-5">
+            <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+              <div className="col mb-5">
+                <div className="card h-100">
                   {/* Product Cards Here */}
 
                   <ProductCard
@@ -69,4 +69,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
