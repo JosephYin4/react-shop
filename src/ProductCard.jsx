@@ -24,9 +24,6 @@ const ProductCard = (props) => {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     );

@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
 import ProductCard from './ProductCard';
+import Shout from './Shout';
+{/*import SumOfTwo from './SumOfTwo';*/}
 
 function App() {
 
@@ -50,12 +52,20 @@ function App() {
               <div className="col mb-5">
                 <div className="card h-100">
                   {/* Product Cards Here */}
-
-                  <ProductCard
-                    imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                    productName="Fancy Product"
-                    price="$40.00 - $80.00"
-                  />
+                  <div className="col-md-3 mb-4">
+                    <ProductCard
+                      imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                      productName="Fancy Product"
+                      price="$40.00 - $80.00"
+                    />
+                  </div>
+                  <div className="col-md-3 mb-4">
+                    <ProductCard
+                      imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                      productName="Fancy Product"
+                      price="$40.00 - $80.00"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,6 +75,20 @@ function App() {
       <footer className="py-5 bg-dark">
         <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
       </footer>
+      
+      <div>
+        <h1>React Shout Component Example</h1>
+        Passing the message prop to Shout
+        <Shout msg="Hello, how are you?" />
+        <Shout msg="this is a test" />
+      </div>
+      {/*<div>
+        <h1>Sum of Two Numbers</h1>
+        Passing the two numbers as props to SumOfTwo
+        <SumOfTwo num1={5} num2={7} />
+        <SumOfTwo num1={10} num2={20} />
+      </div> */}
+      
     </>
   )
 }
