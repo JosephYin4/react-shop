@@ -1,105 +1,87 @@
-import React, { usestate } from 'react';
-import './styles.css';
+import React from 'react';
+import './index.css';
 import ProductCard from './ProductCard';
-import Shout from './Shout';
-{/*import SumOfTwo from './SumOfTwo';*/ }
-
-
 
 function App() {
-
-
-  const [isNavbarShowing, setNavbarShowing] = usestate(false);
-
-  // Toggle the collapse state
-  const toggleNavbar = () => {
-    setNavbarShowing(!isNavbarShowing);
-  };
-
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container px-4 px-lg-5">
-          <a className="navbar-brand" href="#!">Start Bootstrap</a>
-          <button className="navbar-toggler" type="button" onClick={toggleNavbar} data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-          <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-              <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
-              <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#!">All Products</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#!">Popular Items</a></li>
-                  <li><a className="dropdown-item" href="#!">New Arrivals</a></li>
-                </ul>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <a className="navbar-brand" href="#">E-Shop</a>
+          <button
+            className="navbar-toggler"
+            type="button"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Products</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
               </li>
             </ul>
-            <form className="d-flex">
-              <button className="btn btn-outline-dark" type="submit">
-                <i className="bi-cart-fill me-1"></i>
-                Cart
-                <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
-              </button>
-            </form>
           </div>
         </div>
       </nav>
-      <header className="bg-dark py-5">
-        <div className="container px-4 px-lg-5 my-5">
-          <div className="text-center text-white">
-            <h1 className="display-4 fw-bolder">Shop in style</h1>
-            <p className="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
-          </div>
+      <header className="bg-primary text-white text-center py-5">
+        <div className="container">
+          <h1 className="display-4">Welcome to E-Shop</h1>
+          <p className="lead">Discover amazing products at unbeatable prices!</p>
+          <a href="#" className="btn btn-light btn-lg">Shop Now</a>
         </div>
       </header>
-      <main>
-        <section className="py-5">
-          <div className="container px-4 px-lg-5 mt-5">
-            <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-              <div className="col mb-5">
-                <div className="card h-100">
-                  {/* Product Cards Here */}
-                  <div className="col-md-3 mb-4">
-                    <ProductCard
-                      imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                      productName="Fancy Product"
-                      price="$40.00 - $80.00"
-                    />
-                  </div>
-                  <div className="col-md-3 mb-4">
-                    <ProductCard
-                      imageUrl="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                      productName="Fancy Product"
-                      price="$40.00 - $80.00"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+
+      <main className="container my-5">
+        <h2 className="text-center mb-4">Featured Products</h2>
+        {/* Product Cards Here */}
+        <div className="row">
+          <div className="col-md-3 mb-4">
+            <ProductCard
+              imageUrl="https://picsum.photos/id/20/300/200"
+              productName="Example Product"
+              price={19.99}
+            />
           </div>
-        </section>
+          <div className="col-md-3 mb-4">
+            <ProductCard
+              imageUrl="https://picsum.photos/id/1/300/200"
+              productName="Product 2"
+              price="29.99"
+            />
+          </div>
+          <div className="col-md-3 mb-4">
+            <ProductCard
+              imageUrl="https://picsum.photos/id/26/300/200"
+              productName="Product 3"
+              price="39.99"
+            />
+          </div>
+          <div className="col-md-3 mb-4">
+            <ProductCard
+              imageUrl="https://picsum.photos/id/96/300/200"
+              productName="Product 4"
+              price="49.99"
+            />
+          </div>
+        </div>
       </main>
-      <footer className="py-5 bg-dark">
-        <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+
+      <footer className="bg-dark text-white text-center py-3">
+        <div className="container">
+          <p>&copy; 2023 E-Shop. All rights reserved.</p>
+        </div>
       </footer>
-
-      <div>
-        <h1>React Shout Component Example</h1>
-        Passing the message prop to Shout
-        <Shout msg="Hello, how are you?" />
-        <Shout msg="this is a test" />
-      </div>
-      {/*<div>
-        <h1>Sum of Two Numbers</h1>
-        Passing the two numbers as props to SumOfTwo
-        <SumOfTwo num1={5} num2={7} />
-        <SumOfTwo num1={10} num2={20} />
-      </div> */}
-
     </>
-  )
+  );
 }
 
 export default App;
