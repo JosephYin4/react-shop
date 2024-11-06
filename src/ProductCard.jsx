@@ -1,6 +1,23 @@
 import React from 'react';
 
+function Button() {
+    const handleClick = () => {
+      console.log('Button clicked!');
+    };
+  
+    return (
+      <button onClick={handleClick}>
+        Click me
+      </button>
+    );
+  }
+
 const ProductCard = (props) => {
+
+    const handleAddToCart = () => {
+        alert("Added to Cart!")
+      }
+
     return (
 
         <div className="container px-4 px-lg-5 mt-5">
@@ -20,7 +37,7 @@ const ProductCard = (props) => {
                         </div>
                         {/* Product actions */}
                         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div className="text-center"><a className="btn btn-outline-dark mt-auto" onClick={handleAddToCart}>View options</a></div>
                         </div>
                     </div>
                 </div>

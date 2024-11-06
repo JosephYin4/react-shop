@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { usestate } from 'react';
 import './styles.css';
 import ProductCard from './ProductCard';
 import Shout from './Shout';
-{/*import SumOfTwo from './SumOfTwo';*/}
+{/*import SumOfTwo from './SumOfTwo';*/ }
+
+
 
 function App() {
 
+
+  const [isNavbarShowing, setNavbarShowing] = usestate(false);
+
+  // Toggle the collapse state
+  const toggleNavbar = () => {
+    setNavbarShowing(!isNavbarShowing);
+  };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container px-4 px-lg-5">
           <a className="navbar-brand" href="#!">Start Bootstrap</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <button className="navbar-toggler" type="button" onClick={toggleNavbar} data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+          <div className={`collapse navbar-collapse ${isNavbarShowing ? "show" : ""}`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
               <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
               <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
@@ -75,7 +84,7 @@ function App() {
       <footer className="py-5 bg-dark">
         <div className="container"><p className="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
       </footer>
-      
+
       <div>
         <h1>React Shout Component Example</h1>
         Passing the message prop to Shout
@@ -88,7 +97,7 @@ function App() {
         <SumOfTwo num1={5} num2={7} />
         <SumOfTwo num1={10} num2={20} />
       </div> */}
-      
+
     </>
   )
 }
