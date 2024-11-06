@@ -1,7 +1,15 @@
 import React from 'react';
 
+const handleAddToCart = () => {
+    alert("Added to Cart!")
+  }
+
+
 const ProductCard = (props) => {
   return (
+
+
+
     <div className="card">
       <img
         src={props.imageUrl}
@@ -11,7 +19,7 @@ const ProductCard = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.productName}</h5>
         <p className="card-text">${props.price}</p>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>
